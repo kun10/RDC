@@ -10,28 +10,30 @@
 ###2.字节流抽象基类：InputStream, OutputStream
 
 InputStream继承图
-|--InputStream 
-	|--ByteArrayStream
-	|--FileInputStream
-	|--ObjectInputStream
-	|--FilterInputStream
-		|--BufferedInputStream
-		|--DataInputStream
-		|--LineNumberInputStream
-		|--PushbackInputStream
-	|--SequenceInputStream
-	|--StringBufferInputStream
+
+	|--InputStream 
+		|--ByteArrayStream
+		|--FileInputStream
+		|--ObjectInputStream
+		|--FilterInputStream
+			|--BufferedInputStream
+			|--DataInputStream
+			|--LineNumberInputStream
+			|--PushbackInputStream
+		|--SequenceInputStream
+		|--StringBufferInputStream
 		
 OutputStream继承图
-|--OutputStream
-	|--ByteArrayOutputStream
-	|--FileOutputStream
-	|--ObjectOutputStream
-	|--PipedOutputStream
-	|--FilterOutputStream
-	   	|--BufferedOutputStream
-	   	|--DataOutputStream
-	  	|--PrintStream
+
+	|--OutputStream
+		|--ByteArrayOutputStream
+		|--FileOutputStream
+		|--ObjectOutputStream
+		|--PipedOutputStream
+		|--FilterOutputStream
+		   	|--BufferedOutputStream
+		   	|--DataOutputStream
+		  	|--PrintStream
 
 
 ###3.字符流抽象基类：Reader, Writer	
@@ -39,9 +41,9 @@ OutputStream继承图
 
 Writer抽象类共性:
 
-1.子类必须实现的抽象方法仅有 write(char[], int, int)、flush() 和 close() 
+>1.子类必须实现的抽象方法仅有 write(char[], int, int)、flush() 和 close() 
 
-2.常用已实现方法： void write(int c),  void write(String str), void write(char[] cbuf), void write(String str, int off 相对初始写入字符的偏移量, int len 要写入的字符数)
+>2.常用已实现方法： void write(int c),  void write(String str), void write(char[] cbuf), void write(String str, int off 相对初始写入字符的偏移量, int len 要写入的字符数)
 	 
 demo1：
 
@@ -108,15 +110,15 @@ demo5:
 
 Reader继承关系图：
 
-|--Reader
-	|--BufferedReader
-		|--LineNumberReader
+	|--Reader
+		|--BufferedReader
+			|--LineNumberReader
 
 Reader抽象类共性：
 
-1.子类必须实现的方法只有 read(char[], int, int) 将字符读入数组的某一部分 和 close()
+>1.子类必须实现的方法只有 read(char[], int, int) 将字符读入数组的某一部分 和 close()
 	
-2.常用已实现的方法：int read() 读取单个字符, int read(char[] cbuf) 将字符读入数组 
+>2.常用已实现的方法：int read() 读取单个字符, int read(char[] cbuf) 将字符读入数组 
 	
 demo1:
 
