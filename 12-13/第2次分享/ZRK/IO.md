@@ -1,12 +1,12 @@
 #Java IO流
 
-##Java中的流，可以从不同的角度进行分类。
+####Java中的流，可以从不同的角度进行分类。
 	按照数据流的方向不同可以分为：输入流和输出流。
 	按照处理数据单位不同可以分为：字节流和字符流。
-	   字节流：一次读入或读出是8位二进制。
-	   字符流：一次读入或读出是16位二进制。
+	 字节流：一次读入或读出是8位二进制。
+	 字符流：一次读入或读出是16位二进制。
 	按照实现功能不同可以分为：节点流和处理流。
-字节流抽象基类：InputStream, OutputStream
+####字节流抽象基类：InputStream, OutputStream
 	|--InputStream 
 		|--ByteArrayStream
 		|--FileInputStream
@@ -29,10 +29,12 @@
 	   		|--DataOutputStream
 	  		|--PrintStream
 
-字符流抽象基类：Reader, Writer	
-##Writer
+
+###字符流抽象基类：Reader, Writer	
+####Writer
 Writer抽象类共性:
 	子类必须实现的抽象方法仅有 write(char[], int, int)、flush() 和 close() 
+	
 	常用已实现方法： void write(int c),  void write(String str), void write(char[] cbuf), void write(String str, int off 相对初始写入字符的偏移量, int len 要写入的字符数)
 	 
 	demo1：
@@ -88,14 +90,16 @@ Writer抽象类共性:
 		bufw.close();
 		
 		
-##Reader
+####Reader
 继承关系图：
+
 	|--Reader
 		|--BufferedReader
    			|--LineNumberReader
 
 Reader抽象类共性：
 	子类必须实现的方法只有 read(char[], int, int) 将字符读入数组的某一部分 和 close()
+	
 	常用已实现的方法：int read() 读取单个字符, int read(char[] cbuf) 将字符读入数组 
 	
 	demo1:
@@ -221,4 +225,5 @@ Reader抽象类共性：
 		
 					
 对文件进行操作：FileInputStream（字节输入流），FileOutputStream（字节输出流），FileReader（字符输入流），FileWriter（字符输出流）
+
 对管道进行操作：PipedInputStream（字节输入流）,PipedOutStream（字节输出流），PipedReader（字符输入流），PipedWriter（字符输出流）
