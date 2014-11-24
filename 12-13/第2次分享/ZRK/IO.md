@@ -1,13 +1,17 @@
 #Java IO流
 
 ####Java中的流，可以从不同的角度进行分类。
-	按照数据流的方向不同可以分为：输入流和输出流。
+>	按照数据流的方向不同可以分为：输入流和输出流。
 	按照处理数据单位不同可以分为：字节流和字符流。
 	 字节流：一次读入或读出是8位二进制。
 	 字符流：一次读入或读出是16位二进制。
 	按照实现功能不同可以分为：节点流和处理流。
+	
 ####字节流抽象基类：InputStream, OutputStream
-	|--InputStream 
+
+**InputStream继承图**
+
+>	|--InputStream 
 		|--ByteArrayStream
 		|--FileInputStream
 		|--ObjectInputStream
@@ -18,26 +22,27 @@
 			|--PushbackInputStream
 		|--SequenceInputStream
 		|--StringBufferInputStream
-	
-	|--OutputStream
+		
+**OutputStream继承图**
+
+>	|--OutputStream
 		|--ByteArrayOutputStream
 		|--FileOutputStream
 		|--ObjectOutputStream
 		|--PipedOutputStream
 		|--FilterOutputStream
-	   		|--BufferedOutputStream
-	   		|--DataOutputStream
-	  		|--PrintStream
+		   	|--BufferedOutputStream
+		   	|--DataOutputStream
+		  	|--PrintStream
 
 
 ###字符流抽象基类：Reader, Writer	
 ####Writer
 Writer抽象类共性:
-	子类必须实现的抽象方法仅有 write(char[], int, int)、flush() 和 close() 
-	
-	常用已实现方法： void write(int c),  void write(String str), void write(char[] cbuf), void write(String str, int off 相对初始写入字符的偏移量, int len 要写入的字符数)
+子类必须实现的抽象方法仅有 write(char[], int, int)、flush() 和 close() 
+常用已实现方法： void write(int c),  void write(String str), void write(char[] cbuf), void write(String str, int off 相对初始写入字符的偏移量, int len 要写入的字符数)
 	 
-	demo1：
+demo1：
 		FileWriter fw = new FileWriter("D:\\1.txt");
 		//写入到流中（内存中）,需要flush()方法刷新到目的地
 	 	fw.write("hello");
